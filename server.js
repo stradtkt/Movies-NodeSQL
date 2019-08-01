@@ -5,12 +5,18 @@ const { Movie } = db.models;
   await db.sequelize.sync({ force: true });
   try {
     const movie = await Movie.create({
-        title: 'John Wick Chapter 2'
+        title: 'John Wick Chapter 2',
+        runtime: 150,
+        releaseDate: '2018-10-01',
+        isAvailableOnBluRay: true
     });
     console.log(movie.toJSON());
 
     const movie2 = await Movie.create({
-        title: 'The Avengers, Endgame'
+        title: 'The Avengers, Endgame',
+        runtime: 165,
+        releaseDate: '2019-08-01',
+        isAvailableOnBluRay: true
     });
     console.log(movie2.toJSON());
   } catch (error) {
